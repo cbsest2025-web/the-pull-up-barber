@@ -1,89 +1,21 @@
-<!-- Booking Section -->
-<section class="card" id="book">
-  <h2 style="text-align:center;">Book a Pull-Up</h2>
-  <p style="text-align:center;margin-bottom:10px;">
-    Schedule your cut or lineup with <strong>The Pull-Up Barber</strong>.<br>
-    <span style="color:#e63946;">Cash Only • Mobile Service • Training Barber</span>
-  </p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Website</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Logo at the top -->
+    <header>
+        <img src="logo.png" alt="Website Logo" id="logo">
+    </header>
 
-  <div style="text-align:center; margin-bottom: 20px;">
-    <ul style="list-style:none; padding:0; margin:0; font-size:1.1em;">
-      <li>💈 Fade — $10</li>
-      <li>✂️ Line-Up — $5</li>
-      <li>🧔 Beard Trim — $8</li>
-      <li>🎯 Full Service (Fade + Beard) — $15</li>
-    </ul>
-    <p style="font-size:0.8em; color:gray; margin-top:5px;">
-      *Prices are suggested donations while training. Not licensed yet.*
-    </p>
-  </div>
-
-  <form action="https://formspree.io/f/mdkpknod" method="POST" style="max-width:500px;margin:0 auto;display:flex;flex-direction:column;gap:10px;">
-    <label for="name">Full Name:</label>
-    <input type="text" id="name" name="name" placeholder="Your name" required>
-
-    <label for="phone">Phone Number:</label>
-    <input type="tel" id="phone" name="phone" placeholder="(423) 310-1079" required>
-
-    <label for="date">Preferred Date:</label>
-    <input type="date" id="date" name="date" required>
-
-    <label for="location">Location (Address or Area):</label>
-    <input type="text" id="location" name="location" placeholder="Where to pull up" required>
-
-    <label for="service">Requested Service:</label>
-    <select id="service" name="service" required>
-      <option value="">Select a service</option>
-      <option value="fade">Fade</option>
-      <option value="lineup">Line-Up</option>
-      <option value="beard_trim">Beard Trim</option>
-      <option value="full_service">Full Service</option>
-      <option value="other">Other</option>
-    </select>
-
-    <div style="margin-top:10px; text-align:left;">
-      <input type="checkbox" id="agree" name="agree" required>
-      <label for="agree">
-        I understand The Pull-Up Barber is currently in training, not licensed, and that all services are for cash only.
-      </label>
-    </div>
-
-    <button type="submit" class="btn" style="margin-top:12px;background-color:#000;color:#fff;border:none;padding:10px;border-radius:5px;cursor:pointer;">
-      Submit Booking
-    </button>
-  </form>
-</section>
-
-<style>
-  /* Booking Section Styles */
-  .card {
-    background-color: #fff;
-    color: #111;
-    padding: 30px;
-    margin: 30px auto;
-    border-radius: 15px;
-    box-shadow: 0 0 15px rgba(0,0,0,0.1);
-    max-width: 700px;
-  }
-
-  input, select {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    width: 100%;
-    box-sizing: border-box;
-  }
-
-  label {
-    font-weight: 600;
-  }
-
-  input[type="checkbox"] {
-    width: auto;
-    margin-right: 8px;
-  }
-
-  .btn:hover {
-    background-color: #444;
-  }
-</style>
+    <!-- Your existing content -->
+    <main>
+        <h1>Welcome to my website!</h1>
+        <p>Some content here...</p>
+    </main>
+</body>
+</html>
