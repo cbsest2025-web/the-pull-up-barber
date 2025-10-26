@@ -31,6 +31,26 @@
         nav a:hover {
             color: #f0a500;
         }
+        .tags {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            padding: 10px 0;
+            background-color: #222;
+        }
+        .tag {
+            padding: 8px 15px;
+            background-color: #111;
+            color: #fff;
+            border-radius: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .tag:hover {
+            background-color: #f0a500;
+            color: #111;
+        }
         main {
             padding: 40px 20px;
             max-width: 800px;
@@ -89,6 +109,15 @@
         <a href="#contact">Contact</a>
     </nav>
 </header>
+
+<!-- Service Tags -->
+<div class="tags">
+    <a href="#haircuts" class="tag">Haircuts</a>
+    <a href="#fades" class="tag">Fades</a>
+    <a href="#beard" class="tag">Beard</a>
+    <a href="#kids" class="tag">Kids</a>
+    <a href="#donations" class="tag">Donations</a>
+</div>
 
 <main>
     <h1>Welcome to The Pull Up Barber</h1>
