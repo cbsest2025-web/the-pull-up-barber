@@ -4,26 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Pull Up Barber</title>
-    <!-- Street style font for headings -->
+    <!-- Street style font -->
     <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
     <style>
+        /* General Body */
         body {
             margin: 0;
             font-family: 'Arial', sans-serif;
-            background-color: #f5f5f5;
-            color: #333;
+            background-color: #fff; /* White background */
+            color: #000; /* Black text */
         }
 
-        /* Notice Bar */
+        /* Sticky Notice Bar */
         .notice-bar {
-            background-color: #ff4c4c;
-            color: #fff;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background-color: #000; /* Black bar */
+            color: #fff; /* White text */
             text-align: center;
-            padding: 10px;
+            padding: 12px;
             font-weight: bold;
             font-size: 16px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
         }
 
+        /* Header */
         header {
             background-color: #111;
             padding: 20px;
@@ -38,11 +44,13 @@
 
         header h1 {
             font-family: 'Bangers', cursive;
-            color: #f0a500;
+            color: #fff;
             font-size: 3em;
             margin: 10px 0 0 0;
+            text-shadow: 2px 2px 0 #000;
         }
 
+        /* Tags */
         .tags {
             display: flex;
             justify-content: center;
@@ -53,20 +61,24 @@
         }
 
         .tag {
-            padding: 8px 15px;
-            background-color: #111;
+            padding: 10px 20px;
+            background-color: #000;
             color: #fff;
-            border-radius: 20px;
+            border-radius: 25px;
             font-weight: bold;
             cursor: pointer;
             text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 16px;
         }
 
         .tag:hover {
-            background-color: #f0a500;
-            color: #111;
+            background-color: #fff;
+            color: #000;
+            transform: scale(1.1);
         }
 
+        /* Main Content */
         main {
             padding: 40px 20px;
             max-width: 800px;
@@ -76,11 +88,13 @@
         h2 {
             text-align: center;
             font-family: 'Bangers', cursive;
-            color: #111;
+            color: #000;
             font-size: 2.2em;
             margin-bottom: 20px;
+            text-shadow: 1px 1px 0 #555;
         }
 
+        /* Services List */
         ul.services {
             list-style: none;
             padding: 0;
@@ -88,15 +102,22 @@
         }
 
         ul.services li {
-            background-color: #fff;
-            margin-bottom: 10px;
+            background-color: #000;
+            color: #fff;
+            margin-bottom: 12px;
             padding: 15px;
-            border-radius: 10px;
-            box-shadow: 0 0 8px rgba(0,0,0,0.1);
+            border-radius: 12px;
             font-weight: bold;
             display: flex;
             justify-content: space-between;
             font-size: 18px;
+            transition: all 0.3s ease;
+        }
+
+        ul.services li:hover {
+            background-color: #fff;
+            color: #000;
+            transform: scale(1.03);
         }
 
         .donation {
@@ -107,41 +128,53 @@
             margin-top: 10px;
         }
 
+        /* Form Styling */
         form {
             display: flex;
             flex-direction: column;
             gap: 15px;
-            background-color: #fff;
+            background-color: #000;
+            color: #fff;
             padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 12px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
             margin-top: 30px;
         }
 
         form input, form textarea {
             padding: 10px;
-            border: 1px solid #ccc;
+            border: none;
             border-radius: 5px;
             font-size: 16px;
+            outline: none;
+        }
+
+        form input::placeholder,
+        form textarea::placeholder {
+            color: #aaa;
         }
 
         form button {
-            background-color: #111;
-            color: #fff;
+            background-color: #fff;
+            color: #000;
             padding: 12px;
             font-size: 16px;
             border: none;
             border-radius: 5px;
             cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
         }
 
         form button:hover {
-            background-color: #f0a500;
+            background-color: #000;
+            color: #fff;
+            transform: scale(1.05);
         }
 
         .small-print {
             font-size: 12px;
-            color: #666;
+            color: #ccc;
             text-align: center;
         }
 
@@ -149,7 +182,19 @@
             margin-top: 40px;
             text-align: center;
             font-size: 14px;
-            color: #999;
+            color: #555;
+            padding: 20px 0;
+        }
+
+        footer a {
+            color: #000;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #f0a500;
         }
     </style>
 </head>
@@ -169,4 +214,39 @@
 <div class="tags">
     <a href="#haircuts" class="tag">Haircuts</a>
     <a href="#fades" class="tag">Fades</a>
-    <a href="#beard" class="tag">Be
+    <a href="#beard" class="tag">Beard</a>
+    <a href="#kids" class="tag">Kids</a>
+    <a href="#donations" class="tag">Donations</a>
+</div>
+
+<main>
+    <h2>Our Services</h2>
+    <ul class="services">
+        <li><span>Buzz Cut</span><span>$15</span></li>
+        <li><span>Regular Haircut</span><span>$20</span></li>
+        <li><span>Fade</span><span>$25</span></li>
+        <li><span>Beard Trim</span><span>$15</span></li>
+        <li><span>Kids Haircut</span><span>$15</span></li>
+    </ul>
+    <p class="donation">*Donation Suggestions: $5-$20 appreciated for support*</p>
+
+    <section id="contact">
+        <h2>Contact / Book an Appointment</h2>
+        <form action="https://formspree.io/f/mdkpknod" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <input type="tel" name="phone" placeholder="Your Phone Number">
+            <textarea name="message" rows="5" placeholder="Your Message / Appointment Request" required></textarea>
+            <button type="submit">Send</button>
+            <p class="small-print">Prices are cheap! Donations appreciated 😊</p>
+        </form>
+    </section>
+</main>
+
+<footer>
+    &copy; 2025 The Pull Up Barber. All rights reserved.<br>
+    Instagram: <a href="https://instagram.com/the_pull_up_barber" target="_blank">@the_pull_up_barber</a> | TikTok: <a href="https://tiktok.com/@the_pull_up_barber" target="_blank">@the_pull_up_barber</a> | Phone: (423) 310-1079
+</footer>
+
+</body>
+</html>
