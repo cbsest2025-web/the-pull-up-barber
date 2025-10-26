@@ -1,174 +1,53 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>The Pull-Up Barber</title>
-  <style>
-    :root{
-      --bg:#f7f7f7;
-      --dark:#222;
-      --muted:#666;
-      --accent:#ffcc00;
-      --warning:#ff4444;
-      --card:#ffffff;
-      --radius:10px;
-      --maxw:900px;
-      --pad:20px;
-    }
-    *{box-sizing:border-box}
-    body{
-      font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-      margin:0;
-      background:var(--bg);
-      color:var(--dark);
-    }
-    header{
-      background:var(--dark);
-      color:white;
-      padding:28px 16px;
-      text-align:center;
-    }
-    header img{
-      width:120px;
-      height:auto;
-      border-radius:12px;
-      margin-bottom:10px;
-    }
-    header h1{margin:0;font-size:28px;letter-spacing:1px}
-    header p{margin:6px 0 0;color:#ddd}
-    main{max-width:var(--maxw);margin:22px auto;padding:0 16px;}
-    .banner {
-      background:linear-gradient(180deg, rgba(255,68,68,0.98), rgba(220,40,40,0.95));
-      color:white;
-      padding:14px;
-      border-radius:8px;
-      text-align:center;
-      font-weight:700;
-      box-shadow:0 6px 18px rgba(0,0,0,0.08);
-      margin-bottom:16px;
-    }
-    .banner small{display:block;font-weight:600;margin-top:6px;font-size:13px;opacity:0.95}
-    section.card{
-      background:var(--card);
-      padding:var(--pad);
-      border-radius:var(--radius);
-      box-shadow:0 6px 18px rgba(0,0,0,0.04);
-      margin-bottom:16px;
-    }
-    h2{margin:0 0 12px 0;text-align:center}
-    ul{margin:0 0 0 18px;padding:0}
-    li{margin:8px 0;color:var(--muted)}
-    .contact p{margin:6px 0}
-    a{color:var(--dark);text-decoration:underline}
-    .small{font-size:13px;color:#444;margin-top:8px}
-    footer{max-width:var(--maxw);margin:8px auto 40px;padding:8px 16px;text-align:center;color:var(--muted);font-size:13px}
-    form{display:flex;flex-direction:column;gap:12px}
-    label{font-weight:600}
-    input,textarea{
-      padding:10px;border:1px solid #ccc;border-radius:8px;font-size:15px;width:100%;
-    }
-    input[type="checkbox"]{width:auto;margin-right:8px}
-    button{
-      background:var(--dark);
-      color:white;
-      border:none;
-      border-radius:8px;
-      padding:12px;
-      font-weight:700;
-      cursor:pointer;
-    }
-    button:disabled{background:#999;cursor:not-allowed}
-  </style>
-</head>
-<body>
-  <header>
-    <img src="logo.png" alt="The Pull-Up Barber Logo">
-    <h1>The Pull-Up Barber</h1>
-    <p>Mobile Barber • Chattanooga, TN</p>
-  </header>
+<!-- Booking Section -->
+<section class="card" id="book">
+  <h2>Book a Pull-Up</h2>
+  <p style="text-align:center;margin-bottom:10px;">
+    Schedule a cut or lineup with The Pull-Up Barber.<br>
+    <strong>Cash Only • Mobile Service • Training Barber</strong>
+  </p>
 
-  <main>
+  <div style="text-align:center; margin-bottom: 15px;">
+    <ul style="list-style:none; padding:0; margin:0;">
+      <li>💈 Fade — $10</li>
+      <li>✂️ Line-Up — $5</li>
+      <li>🧔 Beard Trim — $8</li>
+      <li>🎯 Full Service (Fade + Beard) — $15</li>
+    </ul>
+    <p style="font-size: 0.8em; color: gray; margin-top:5px;">
+      *Prices are suggested donations while training. Not licensed yet.*
+    </p>
+  </div>
 
-    <div class="banner">
-      ⚠️ NOTICE: NOT A LICENSED BARBER ⚠️
-      <small>
-        I am not currently a licensed barber or apprentice. All services are performed as practice and demonstration.  
-        Cash donations/tips are accepted voluntarily.
-      </small>
+  <form action="https://formspree.io/f/mdkpknod" method="POST">
+    <label for="name">Full Name:</label>
+    <input type="text" id="name" name="name" placeholder="Your name" required>
+
+    <label for="phone">Phone Number:</label>
+    <input type="tel" id="phone" name="phone" placeholder="(423) 310-1079" required>
+
+    <label for="date">Preferred Date:</label>
+    <input type="date" id="date" name="date" required>
+
+    <label for="location">Location (Address or Area):</label>
+    <input type="text" id="location" name="location" placeholder="Where to pull up" required>
+
+    <label for="service">Requested Service:</label>
+    <select id="service" name="service" required>
+      <option value="">Select a service</option>
+      <option value="fade">Fade</option>
+      <option value="lineup">Line-Up</option>
+      <option value="beard_trim">Beard Trim</option>
+      <option value="full_service">Full Service</option>
+      <option value="other">Other</option>
+    </select>
+
+    <div style="margin-top:10px;">
+      <input type="checkbox" id="agree" name="agree" required>
+      <label for="agree">
+        I understand The Pull-Up Barber is currently in training, not licensed, and that all services are for cash only.
+      </label>
     </div>
 
-    <section class="card">
-      <h2>About Me</h2>
-      <p class="small">
-        My name is Charlie, known as <strong>The Pull-Up Barber</strong>.  
-        I’m a young barber in training working toward my Tennessee license. Until then, I’m offering practice cuts and fades for those who want to support my growth.
-      </p>
-    </section>
-
-    <section class="card">
-      <h2>Services</h2>
-      <ul>
-        <li>Haircuts — tapers, fades, and lineups</li>
-        <li>Beard trims</li>
-        <li>Pull-up (mobile) appointments — cash only</li>
-      </ul>
-      <p class="small">
-        All payments are considered <strong>cash tips or donations</strong> for time and travel — not professional service fees.
-      </p>
-    </section>
-
-    <section class="card">
-      <h2>Book a Cut</h2>
-      <form onsubmit="return checkAgreement()">
-        <label for="name">Full Name</label>
-        <input type="text" id="name" required>
-
-        <label for="date">Preferred Date & Time</label>
-        <input type="text" id="date" placeholder="Example: Friday 4 PM" required>
-
-        <label for="location">Location</label>
-        <input type="text" id="location" placeholder="Your address or meet-up spot" required>
-
-        <div>
-          <input type="checkbox" id="agree" />
-          <label for="agree" style="display:inline;">
-            I understand that The Pull-Up Barber is not a licensed barber. I consent to a practice haircut and agree that any cash given is a voluntary donation.
-          </label>
-        </div>
-
-        <button type="submit" id="submitBtn" disabled>Book Appointment</button>
-      </form>
-    </section>
-
-    <section class="card contact">
-      <h2>Contact</h2>
-      <p>Phone: <strong>(423) 310-1079</strong></p>
-      <p>Instagram: <a href="https://instagram.com/the_pull_up_barber" target="_blank">@the_pull_up_barber</a></p>
-      <p>TikTok: <a href="https://tiktok.com/@the_pull_up_barber" target="_blank">@the_pull_up_barber</a></p>
-    </section>
-
-  </main>
-
-  <footer>
-    © 2025 The Pull-Up Barber — Training Stage. Cash tips/donations only.
-  </footer>
-
-  <script>
-    const checkbox = document.getElementById('agree');
-    const button = document.getElementById('submitBtn');
-    checkbox.addEventListener('change', () => {
-      button.disabled = !checkbox.checked;
-    });
-
-    function checkAgreement(){
-      if(!checkbox.checked){
-        alert("You must agree to the notice before booking.");
-        return false;
-      }
-      alert("Booking submitted! The Pull-Up Barber will contact you soon.");
-      return false; // prevents actual form submission (no backend)
-    }
-  </script>
-</body>
-</html>
+    <button type="submit" class="btn" style="margin-top:12px;">Submit Booking</button>
+  </form>
+</section>
