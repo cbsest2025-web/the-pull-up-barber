@@ -1,97 +1,164 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>The Pull-Up Barber</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #fff;
-      color: #000;
-      margin: 0;
-      padding: 0;
-      text-align: center;
+    :root{
+      --bg:#f7f7f7;
+      --dark:#222;
+      --muted:#666;
+      --accent:#ffcc00;
+      --warning:#ff4444;
+      --card:#ffffff;
+      --radius:10px;
+      --maxw:900px;
+      --pad:20px;
     }
-    header {
-      padding: 20px;
+    *{box-sizing:border-box}
+    body{
+      font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      margin:0;
+      background:var(--bg);
+      color:var(--dark);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
     }
-    img.logo {
-      width: 120px;
-      border-radius: 50%;
+    header{
+      background:var(--dark);
+      color:white;
+      padding:28px 16px;
+      text-align:center;
     }
-    h1 {
-      font-size: 2em;
-      margin: 10px 0;
+    header h1{margin:0;font-size:28px;letter-spacing:1px}
+    header p{margin:6px 0 0;color:#ddd}
+
+    main{max-width:var(--maxw);margin:22px auto;padding:0 16px;}
+
+    .banner {
+      background:linear-gradient(180deg, rgba(255,68,68,0.98), rgba(220,40,40,0.95));
+      color:white;
+      padding:14px;
+      border-radius:8px;
+      text-align:center;
+      font-weight:700;
+      box-shadow:0 6px 18px rgba(0,0,0,0.08);
+      margin-bottom:16px;
     }
-    section {
-      padding: 30px 15px;
-      border-top: 1px solid #000;
+    .banner small{display:block;font-weight:600;margin-top:6px;font-size:13px;opacity:0.95}
+
+    .notice {
+      background:var(--accent);
+      padding:10px;
+      border-radius:6px;
+      text-align:center;
+      font-weight:700;
+      margin-bottom:18px;
     }
-    h2 {
-      text-transform: uppercase;
-      letter-spacing: 1px;
+
+    section.card{
+      background:var(--card);
+      padding:var(--pad);
+      border-radius:var(--radius);
+      box-shadow:0 6px 18px rgba(0,0,0,0.04);
+      margin-bottom:16px;
     }
-    ul {
-      list-style: none;
-      padding: 0;
+
+    h2{margin:0 0 12px 0;text-align:center}
+    ul{margin:0 0 0 18px;padding:0}
+    li{margin:8px 0;color:var(--muted)}
+
+    .contact p{margin:6px 0}
+    a{color:var(--dark);text-decoration:underline}
+
+    .small{font-size:13px;color:#444;margin-top:8px}
+    .muted{color:var(--muted);font-size:13px}
+
+    /* small footer */
+    footer{max-width:var(--maxw);margin:8px auto 40px;padding:8px 16px;text-align:center;color:var(--muted);font-size:13px}
+    .btn{
+      display:inline-block;padding:10px 14px;border-radius:8px;background:var(--dark);color:white;text-decoration:none;font-weight:700;margin-top:8px;
     }
-    li {
-      margin: 8px 0;
-    }
-    a {
-      color: #000;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    footer {
-      border-top: 1px solid #000;
-      padding: 15px;
-      font-size: 0.9em;
+
+    @media (max-width:520px){
+      header h1{font-size:22px}
+      .banner{font-size:15px}
     }
   </style>
 </head>
 <body>
   <header>
-    <img src="logo.png" alt="The Pull-Up Barber Logo" class="logo" />
     <h1>The Pull-Up Barber</h1>
-    <p>Fresh fades anywhere, anytime.</p>
+    <p>Mobile Barber Service • Chattanooga, TN</p>
   </header>
 
-  <section id="about">
-    <h2>About</h2>
-    <p>I’m a mobile barber who brings the chair to you — clean fades, sharp lines, and professional cuts wherever you are. No shop needed, just skill and precision.</p>
-  </section>
+  <main>
 
-  <section id="services">
-    <h2>Services & Prices</h2>
-    <ul>
-      <li>Regular Cut — $25</li>
-      <li>Cut + Beard — $35</li>
-      <li>Kids Cut — $20</li>
-      <li>Line-Up — $15</li>
-      <li>Travel Fee (if far) — $5–10</li>
-    </ul>
-  </section>
+    <!-- VERY VISIBLE LICENSE WARNINGS -->
+    <div class="banner" role="status" aria-live="polite">
+      ⚠️ IMPORTANT: NOT CURRENTLY LICENSED ⚠️
+      <small>
+        I am not a licensed Master Barber yet. Please read the details below before booking.
+      </small>
+    </div>
 
-  <section id="book">
-    <h2>Book a Cut</h2>
-    <p>Call or text me at <strong>(423) 310-1079</strong> to lock in your spot.</p>
-  </section>
+    <!-- Editable explanation. Change this text to match your real status.
+         Examples:
+         - "I am an apprentice training under [Sponsor Name], a licensed barber. Services are provided under supervision."
+         - "I am not licensed and only practice on friends/family. I am not accepting paid clients."
+    -->
+    <section class="card">
+      <h2>License & Service Notice</h2>
+      <p class="muted">
+        <strong>Current status:</strong> I am <strong>not yet a licensed Master Barber</strong>.
+        I am currently training and working toward licensure through dual enrollment and an apprenticeship.
+      </p>
 
-  <section id="contact">
-    <h2>Connect</h2>
-    <p>Follow me for updates and fresh cuts:</p>
-    <p>
-      Instagram: <a href="https://www.instagram.com/the_pull_up_barber" target="_blank">@the_pull_up_barber</a><br>
-      TikTok: <a href="https://www.tiktok.com/@the_pull_up_barber" target="_blank">@the_pull_up_barber</a>
-    </p>
-  </section>
+      <p class="muted">
+        <strong>Please read carefully:</strong>
+      </p>
+      <ul>
+        <li>If you book a paid appointment, you acknowledge that I am not a licensed barber at this time.</li>
+        <li>When applicable, I work <strong>under the supervision</strong> of a licensed Master Barber — ASK if you want the supervisor's name and license number.</li>
+        <li>If you require services only from a licensed professional, please do not book until I am fully licensed.</li>
+        <li>I accept <strong>cash only</strong> for all services — exact cash preferred.</li>
+      </ul>
+
+      <p class="small">
+        <strong>Important:</strong> I will not perform services that are outside of my current training or that would require a licensed professional (for example: advanced chemical services) unless a licensed sponsor is supervising.
+      </p>
+    </section>
+
+    <div class="notice">⚠️ Cash Payments Only ⚠️</div>
+
+    <section class="card">
+      <h2>Services Offered</h2>
+      <ul>
+        <li>Haircuts — fades, line-ups, classic cuts</li>
+        <li>Beard trims & basic grooming</li>
+        <li>Kids' haircuts</li>
+        <li>Event grooming (limited — please inquire)</li>
+      </ul>
+      <p class="muted small">
+        NOTE: Some services may be limited while I complete training. Ask before booking.
+      </p>
+    </section>
+
+    <section class="card contact">
+      <h2>Contact & Booking</h2>
+      <p>Phone: <strong>(423) 310-1079</strong></p>
+      <p>Instagram: <a href="https://instagram.com/the_pull_up_barber" target="_blank" rel="noopener">@the_pull_up_barber</a></p>
+      <p>TikTok: <a href="https://tiktok.com/@the_pull_up_barber" target="_blank" rel="noopener">@the_pull_up_barber</a></p>
+      <p class="small">Appointments: Send an Instagram DM or call. When booking, include "apprentice" in the message so you know my current status.</p>
+
+      <a class="btn" href="tel:+14233101079">Call Now</a>
+    </section>
+
+  </main>
 
   <footer>
-    <p>&copy; 2025 The Pull-Up Barber. All rights reserved.</p>
+    The Pull-Up Barber — Mobile service. For questions about licensing or supervision, ask before booking.
   </footer>
 </body>
 </html>
