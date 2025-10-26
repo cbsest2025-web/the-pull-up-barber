@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Pull Up Barber</title>
-    <!-- Street style font -->
+    <!-- Street style font for headings -->
     <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
     <style>
         body {
@@ -13,20 +13,36 @@
             background-color: #f5f5f5;
             color: #333;
         }
+
+        /* Notice Bar */
+        .notice-bar {
+            background-color: #ff4c4c;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
         header {
             background-color: #111;
             padding: 20px;
             text-align: center;
         }
+
         header img {
             height: 80px;
+            display: block;
+            margin: 0 auto;
         }
+
         header h1 {
             font-family: 'Bangers', cursive;
             color: #f0a500;
             font-size: 3em;
             margin: 10px 0 0 0;
         }
+
         .tags {
             display: flex;
             justify-content: center;
@@ -35,6 +51,7 @@
             background-color: #222;
             flex-wrap: wrap;
         }
+
         .tag {
             padding: 8px 15px;
             background-color: #111;
@@ -44,15 +61,18 @@
             cursor: pointer;
             text-decoration: none;
         }
+
         .tag:hover {
             background-color: #f0a500;
             color: #111;
         }
+
         main {
             padding: 40px 20px;
             max-width: 800px;
             margin: auto;
         }
+
         h2 {
             text-align: center;
             font-family: 'Bangers', cursive;
@@ -60,11 +80,13 @@
             font-size: 2.2em;
             margin-bottom: 20px;
         }
+
         ul.services {
             list-style: none;
             padding: 0;
             margin: 20px 0;
         }
+
         ul.services li {
             background-color: #fff;
             margin-bottom: 10px;
@@ -74,7 +96,9 @@
             font-weight: bold;
             display: flex;
             justify-content: space-between;
+            font-size: 18px;
         }
+
         .donation {
             text-align: center;
             font-size: 14px;
@@ -82,6 +106,7 @@
             color: #555;
             margin-top: 10px;
         }
+
         form {
             display: flex;
             flex-direction: column;
@@ -92,12 +117,14 @@
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
             margin-top: 30px;
         }
+
         form input, form textarea {
             padding: 10px;
             border: 1px solid #ccc;
             border-radius: 5px;
             font-size: 16px;
         }
+
         form button {
             background-color: #111;
             color: #fff;
@@ -107,14 +134,17 @@
             border-radius: 5px;
             cursor: pointer;
         }
+
         form button:hover {
             background-color: #f0a500;
         }
+
         .small-print {
             font-size: 12px;
             color: #666;
             text-align: center;
         }
+
         footer {
             margin-top: 40px;
             text-align: center;
@@ -125,6 +155,11 @@
 </head>
 <body>
 
+<!-- Notice Bar -->
+<div class="notice-bar">
+    ⚠️ I am not a licensed barber. Services are offered at your own risk. ⚠️
+</div>
+
 <header>
     <img src="logo.png" alt="The Pull Up Barber Logo">
     <h1>The Pull Up Barber</h1>
@@ -134,39 +169,4 @@
 <div class="tags">
     <a href="#haircuts" class="tag">Haircuts</a>
     <a href="#fades" class="tag">Fades</a>
-    <a href="#beard" class="tag">Beard</a>
-    <a href="#kids" class="tag">Kids</a>
-    <a href="#donations" class="tag">Donations</a>
-</div>
-
-<main>
-    <h2>Our Services</h2>
-    <ul class="services">
-        <li><span>Buzz Cut</span><span>$15</span></li>
-        <li><span>Regular Haircut</span><span>$20</span></li>
-        <li><span>Fade</span><span>$25</span></li>
-        <li><span>Beard Trim</span><span>$15</span></li>
-        <li><span>Kids Haircut</span><span>$15</span></li>
-    </ul>
-    <p class="donation">*Donation Suggestions: $5-$20 appreciated for support*</p>
-
-    <section id="contact">
-        <h2>Contact / Book an Appointment</h2>
-        <form action="https://formspree.io/f/mdkpknod" method="POST">
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="email" placeholder="Your Email" required>
-            <input type="tel" name="phone" placeholder="Your Phone Number">
-            <textarea name="message" rows="5" placeholder="Your Message / Appointment Request" required></textarea>
-            <button type="submit">Send</button>
-            <p class="small-print">Prices are cheap! Donations appreciated 😊</p>
-        </form>
-    </section>
-</main>
-
-<footer>
-    &copy; 2025 The Pull Up Barber. All rights reserved.<br>
-    Instagram: <a href="https://instagram.com/the_pull_up_barber" target="_blank">@the_pull_up_barber</a> | TikTok: <a href="https://tiktok.com/@the_pull_up_barber" target="_blank">@the_pull_up_barber</a> | Phone: (423) 310-1079
-</footer>
-
-</body>
-</html>
+    <a href="#beard" class="tag">Be
