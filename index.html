@@ -1,252 +1,298 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Pull Up Barber</title>
-    <!-- Street style font -->
-    <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
-    <style>
-        /* General Body */
-        body {
-            margin: 0;
-            font-family: 'Arial', sans-serif;
-            background-color: #fff; /* White background */
-            color: #000; /* Black text */
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Pull Up Barber</title>
+  
+  <!-- Street-style font -->
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-        /* Sticky Notice Bar */
-        .notice-bar {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            background-color: #000; /* Black bar */
-            color: #fff; /* White text */
-            text-align: center;
-            padding: 12px;
-            font-weight: bold;
-            font-size: 16px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-        }
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background-color: #fff;
+      color: #000;
+    }
 
-        /* Header */
-        header {
-            background-color: #111;
-            padding: 20px;
-            text-align: center;
-        }
+    /* Sticky Notice Bar */
+    .notice-bar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background-color: #000;
+      color: #fff;
+      text-align: center;
+      padding: 12px;
+      font-weight: bold;
+      font-size: 16px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    }
 
-        header img {
-            height: 80px;
-            display: block;
-            margin: 0 auto;
-        }
+    /* Header */
+    header {
+      background-color: #111;
+      padding: 20px;
+      text-align: center;
+    }
 
-        header h1 {
-            font-family: 'Bangers', cursive;
-            color: #fff;
-            font-size: 3em;
-            margin: 10px 0 0 0;
-            text-shadow: 2px 2px 0 #000;
-        }
+    header img {
+      height: 80px;
+      display: block;
+      margin: 0 auto;
+    }
 
-        /* Tags */
-        .tags {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            padding: 15px 0;
-            background-color: #222;
-            flex-wrap: wrap;
-        }
+    header h1 {
+      font-family: 'Bangers', cursive;
+      color: #fff;
+      font-size: 3em;
+      margin: 10px 0 0 0;
+      text-shadow: 2px 2px 0 #000;
+    }
 
-        .tag {
-            padding: 10px 20px;
-            background-color: #000;
-            color: #fff;
-            border-radius: 25px;
-            font-weight: bold;
-            cursor: pointer;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            font-size: 16px;
-        }
+    /* Tags */
+    .tags {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      padding: 15px 0;
+      background-color: #222;
+      flex-wrap: wrap;
+    }
 
-        .tag:hover {
-            background-color: #fff;
-            color: #000;
-            transform: scale(1.1);
-        }
+    .tag {
+      padding: 10px 20px;
+      background-color: #000;
+      color: #fff;
+      border-radius: 25px;
+      font-weight: bold;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      font-size: 16px;
+    }
 
-        /* Main Content */
-        main {
-            padding: 40px 20px;
-            max-width: 800px;
-            margin: auto;
-        }
+    .tag:hover {
+      background-color: #fff;
+      color: #000;
+      transform: scale(1.1);
+    }
 
-        h2 {
-            text-align: center;
-            font-family: 'Bangers', cursive;
-            color: #000;
-            font-size: 2.2em;
-            margin-bottom: 20px;
-            text-shadow: 1px 1px 0 #555;
-        }
+    /* Main */
+    main {
+      padding: 40px 20px;
+      max-width: 800px;
+      margin: auto;
+    }
 
-        /* Services List */
-        ul.services {
-            list-style: none;
-            padding: 0;
-            margin: 20px 0;
-        }
+    h2 {
+      text-align: center;
+      font-family: 'Bangers', cursive;
+      color: #000;
+      font-size: 2.2em;
+      margin-bottom: 20px;
+      text-shadow: 1px 1px 0 #555;
+    }
 
-        ul.services li {
-            background-color: #000;
-            color: #fff;
-            margin-bottom: 12px;
-            padding: 15px;
-            border-radius: 12px;
-            font-weight: bold;
-            display: flex;
-            justify-content: space-between;
-            font-size: 18px;
-            transition: all 0.3s ease;
-        }
+    /* Services */
+    ul.services {
+      list-style: none;
+      padding: 0;
+      margin: 20px 0;
+    }
 
-        ul.services li:hover {
-            background-color: #fff;
-            color: #000;
-            transform: scale(1.03);
-        }
+    ul.services li {
+      background-color: #000;
+      color: #fff;
+      margin-bottom: 12px;
+      padding: 15px;
+      border-radius: 12px;
+      font-weight: bold;
+      display: flex;
+      justify-content: space-between;
+      font-size: 18px;
+      transition: all 0.3s ease;
+      box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+    }
 
-        .donation {
-            text-align: center;
-            font-size: 14px;
-            font-style: italic;
-            color: #555;
-            margin-top: 10px;
-        }
+    ul.services li:hover {
+      background-color: #fff;
+      color: #000;
+      transform: scale(1.03);
+    }
 
-        /* Form Styling */
-        form {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            background-color: #000;
-            color: #fff;
-            padding: 20px;
-            border-radius: 12px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.2);
-            margin-top: 30px;
-        }
+    .donation {
+      text-align: center;
+      font-size: 14px;
+      font-style: italic;
+      color: #555;
+      margin-top: 10px;
+    }
 
-        form input, form textarea {
-            padding: 10px;
-            border: none;
-            border-radius: 5px;
-            font-size: 16px;
-            outline: none;
-        }
+    /* Form */
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      background-color: #000;
+      color: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      margin-top: 30px;
+    }
 
-        form input::placeholder,
-        form textarea::placeholder {
-            color: #aaa;
-        }
+    form input, form textarea {
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      outline: none;
+    }
 
-        form button {
-            background-color: #fff;
-            color: #000;
-            padding: 12px;
-            font-size: 16px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-weight: bold;
-            transition: all 0.3s ease;
-        }
+    form input::placeholder,
+    form textarea::placeholder {
+      color: #aaa;
+    }
 
-        form button:hover {
-            background-color: #000;
-            color: #fff;
-            transform: scale(1.05);
-        }
+    form button {
+      background-color: #fff;
+      color: #000;
+      padding: 12px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
 
-        .small-print {
-            font-size: 12px;
-            color: #ccc;
-            text-align: center;
-        }
+    form button:hover {
+      background-color: #000;
+      color: #fff;
+      transform: scale(1.05);
+    }
 
-        footer {
-            margin-top: 40px;
-            text-align: center;
-            font-size: 14px;
-            color: #555;
-            padding: 20px 0;
-        }
+    .small-print {
+      font-size: 12px;
+      color: #ccc;
+      text-align: center;
+    }
 
-        footer a {
-            color: #000;
-            text-decoration: none;
-            font-weight: bold;
-            transition: color 0.3s ease;
-        }
+    /* Footer */
+    footer {
+      margin-top: 40px;
+      text-align: center;
+      font-size: 14px;
+      color: #555;
+      padding: 30px 0;
+      background-color: #111;
+    }
 
-        footer a:hover {
-            color: #f0a500;
-        }
-    </style>
+    footer a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      margin: 0 8px;
+      transition: all 0.3s ease;
+    }
+
+    footer a:hover {
+      color: #000;
+    }
+
+    /* Social Buttons */
+    .social-button {
+      display: inline-block;
+      background-color: #fff;
+      color: #000;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      line-height: 40px;
+      text-align: center;
+      margin: 0 8px;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 5px rgba(255,255,255,0.6);
+    }
+
+    .social-button:hover {
+      background-color: #000;
+      color: #fff;
+      transform: scale(1.1);
+      box-shadow: 0 0 10px #fff;
+    }
+
+    .social-icon {
+      font-size: 18px;
+      vertical-align: middle;
+    }
+  </style>
 </head>
 <body>
 
-<!-- Notice Bar -->
-<div class="notice-bar">
+  <!-- Notice -->
+  <div class="notice-bar">
     ⚠️ I am not a licensed barber. Services are offered at your own risk. ⚠️
-</div>
+  </div>
 
-<header>
+  <!-- Header -->
+  <header>
     <img src="logo.png" alt="The Pull Up Barber Logo">
     <h1>The Pull Up Barber</h1>
-</header>
+  </header>
 
-<!-- Service Tags -->
-<div class="tags">
+  <!-- Tags -->
+  <div class="tags">
     <a href="#haircuts" class="tag">Haircuts</a>
     <a href="#fades" class="tag">Fades</a>
     <a href="#beard" class="tag">Beard</a>
     <a href="#kids" class="tag">Kids</a>
     <a href="#donations" class="tag">Donations</a>
-</div>
+  </div>
 
-<main>
+  <main>
     <h2>Our Services</h2>
     <ul class="services">
-        <li><span>Buzz Cut</span><span>$15</span></li>
-        <li><span>Regular Haircut</span><span>$20</span></li>
-        <li><span>Fade</span><span>$25</span></li>
-        <li><span>Beard Trim</span><span>$15</span></li>
-        <li><span>Kids Haircut</span><span>$15</span></li>
+      <li><span>Buzz Cut</span><span>$15</span></li>
+      <li><span>Regular Haircut</span><span>$20</span></li>
+      <li><span>Fade</span><span>$25</span></li>
+      <li><span>Beard Trim</span><span>$15</span></li>
+      <li><span>Kids Haircut</span><span>$15</span></li>
     </ul>
     <p class="donation">*Donation Suggestions: $5-$20 appreciated for support*</p>
 
+    <!-- Contact Form -->
     <section id="contact">
-        <h2>Contact / Book an Appointment</h2>
-        <form action="https://formspree.io/f/mdkpknod" method="POST">
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="email" placeholder="Your Email" required>
-            <input type="tel" name="phone" placeholder="Your Phone Number">
-            <textarea name="message" rows="5" placeholder="Your Message / Appointment Request" required></textarea>
-            <button type="submit">Send</button>
-            <p class="small-print">Prices are cheap! Donations appreciated 😊</p>
-        </form>
+      <h2>Contact / Book an Appointment</h2>
+      <form action="https://formspree.io/f/mdkpknod" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <input type="tel" name="phone" placeholder="Your Phone Number">
+        <textarea name="message" rows="5" placeholder="Your Message / Appointment Request" required></textarea>
+        <button type="submit">Send</button>
+        <p class="small-print">Prices are cheap! Donations appreciated 😊</p>
+      </form>
     </section>
-</main>
+  </main>
 
-<footer>
-    &copy; 2025 The Pull Up Barber. All rights reserved.<br>
-    Instagram: <a href="https://instagram.com/the_pull_up_barber" target="_blank">@the_pull_up_barber</a> | TikTok: <a href="https://tiktok.com/@the_pull_up_barber" target="_blank">@the_pull_up_barber</a> | Phone: (423) 310-1079
-</footer>
+  <!-- Footer -->
+  <footer>
+    <div>
+      <a href="https://instagram.com/the_pull_up_barber" target="_blank" class="social-button">
+        <i class="fab fa-instagram social-icon"></i>
+      </a>
+      <a href="https://tiktok.com/@the_pull_up_barber" target="_blank" class="social-button">
+        <i class="fab fa-tiktok social-icon"></i>
+      </a>
+    </div>
+    <p>@the_pull_up_barber</p>
+    <p>Phone: (423) 310-1079</p>
+    <p>&copy; 2025 The Pull Up Barber. All rights reserved.</p>
+  </footer>
 
 </body>
 </html>
